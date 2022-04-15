@@ -33,9 +33,9 @@ class Category
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="last_update", type="datetime", nullable=false, options={"default"="CURRENT_TIMESTAMP"})
+     * @ORM\Column(name="last_update", type="datetime", nullable=true, options={"default"="CURRENT_TIMESTAMP"})
      */
-    private $lastUpdate = 'CURRENT_TIMESTAMP';
+    private $lastUpdate = null;// = 'CURRENT_TIMESTAMP';
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -74,7 +74,7 @@ class Category
         return $this->lastUpdate;
     }
 
-    public function setLastUpdate(\DateTimeInterface $lastUpdate): self
+    public function setLastUpdate(?\DateTimeInterface $lastUpdate): self
     {
         $this->lastUpdate = $lastUpdate;
 

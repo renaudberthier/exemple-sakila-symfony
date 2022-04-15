@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test ActorController{% endblock %}
+
+{% block body %}
+
+<h1>{{ actor.firstName }} {{ actor.lastName }}</h1>
+
+<ul>
+{% for film in actor.film %}
+    <li>#{{ film.filmId }} {{ film.title }} ({{ film.language.name }})</li>
+{% endfor %}
+</ul>
+{% endblock %}

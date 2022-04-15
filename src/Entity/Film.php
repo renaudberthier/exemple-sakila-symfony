@@ -40,7 +40,7 @@ class Film
     /**
      * @var \DateTime|null
      *
-     * @ORM\Column(name="release_year", type="date", nullable=true)
+     * @ORM\Column(name="release_year", type="string", nullable=true)
      */
     private $releaseYear;
 
@@ -173,12 +173,12 @@ class Film
         return $this;
     }
 
-    public function getReleaseYear(): ?\DateTimeInterface
+    public function getReleaseYear(): ?string
     {
         return $this->releaseYear;
     }
 
-    public function setReleaseYear(?\DateTimeInterface $releaseYear): self
+    public function setReleaseYear(?string $releaseYear): self
     {
         $this->releaseYear = $releaseYear;
 
